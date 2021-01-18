@@ -11,4 +11,6 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 8, maximum: 32 }, format: { with: VALID_PASSWORD_REGEX }
   
+  has_many :topics
+  
 end
