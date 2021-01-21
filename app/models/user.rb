@@ -12,5 +12,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8, maximum: 32 }, format: { with: VALID_PASSWORD_REGEX }
   
   has_many :topics
+  has_many :favorites
+  has_many :favorite_topics, through: :favorites, source: 'topic'
   
 end
